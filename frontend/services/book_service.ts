@@ -24,7 +24,7 @@ export async function deleteBook(id: number) {
 
 export async function updateBookStatus(id: number, status: string) {
     const response = await fetch(`${baseApiUrl}/books/${id}`, {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },

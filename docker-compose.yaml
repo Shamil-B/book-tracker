@@ -16,7 +16,7 @@ services:
     build:
       context: ./backend/app
       dockerfile: Dockerfile
-    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; cd app; uvicorn main:app --host 0.0.0.0'
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; cd app; pytest; uvicorn main:app --host 0.0.0.0'
     volumes:
       - ./backend:/app
     ports:

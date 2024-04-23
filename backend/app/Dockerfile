@@ -8,8 +8,8 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # install dependencies
-RUN pip install fastapi
-RUN pip install "uvicorn[standard]"
-RUN pip install asyncpg
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
 # copy project
 COPY . .

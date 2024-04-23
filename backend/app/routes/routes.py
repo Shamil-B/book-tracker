@@ -29,7 +29,7 @@ async def create_book(book: Book):
     return await repo.create(book.title)
 
 
-@router.patch('/books/{book_id}')
+@router.put('/books/{book_id}')
 async def change_book_status(book_id: int, status: Status):
     return await repo.change_status(book_id, status.status)
 
